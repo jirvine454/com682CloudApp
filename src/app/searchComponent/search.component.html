@@ -1,0 +1,31 @@
+<h1>Search Movies by Name, Genre or Year!</h1>
+<div class="search">
+    <input textarea matInput placeholder="Enter name, genre or year" type="text" #page/>
+    <button mat-raised-button (click)="searchMovie(page.value)">Search</button>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="row row-cols md-3">
+            <mat-card class="mat-card" *ngFor="let movie of movie_list" style="cursor: pointer"
+                [routerLink]="['/movies', movie._id]">
+                <mat-card-header>
+                    <mat-card-title id="title">{{ movie.Series_Title }}</mat-card-title>
+                    <mat-card-subtitle id="subtitle">{{ movie.Genre }}</mat-card-subtitle>
+                </mat-card-header>
+                <img class="img" mat-card-image src={{movie.Poster_Link}} alt="Movie Poster">
+                <mat-card-content>
+                    <p>
+                        <b>Overview:</b> {{ movie.Overview }}
+                    </p>
+                    <p>
+                        <b>Release Year:</b> {{ movie.Released_Year }}
+                    </p>
+                    <p>
+                        <b> {{movie.Review_Count }}</b> reviews available
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div> <!-- container -->

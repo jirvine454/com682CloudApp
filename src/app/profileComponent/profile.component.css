@@ -1,0 +1,16 @@
+#title {
+    margin-top: 70px;
+}
+
+img {
+    margin-left: 12cm;
+    margin-top: -130px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.list {
+    margin-left: 20px;
+}

@@ -1,0 +1,9 @@
+<ul *ngIf="authService.user$ | async as user">
+    <h1 id="title">Good Afternon {{ user.name }}!</h1>
+    <h2>Your Account Details Can be Found Below:</h2>
+    <div class="list">
+        <li>Name: {{ user.name }}</li>
+        <li>Email: {{ user.email }}</li>
+    </div>
+    <img src="https://lh3.googleusercontent.com/a/AEdFTp4-zhv-nboyHFo1WvxM1IU6AV7EjlY0HMDuX-UP=s96-c" alt="User Profile Picture">
+</ul>

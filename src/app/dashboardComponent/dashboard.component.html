@@ -1,0 +1,13 @@
+<div class="container" *ngFor="let movie of movie_list | async" style="cursor: pointer"
+[routerLink]="['/movies', movie.filePath]">
+    <video width="320" height="240" controls>
+        <source src="https://vidshareb00787624.blob.core.windows.net{{ movie.filePath }}">
+    </video>
+    <p>{{ movie.filePath }}</p>
+    <ng-container *ngIf="authService.isAuthenticated$ | async; else loggedOut2">
+        <mat-icon class="red-icon" (click)="onDeleteMovie(movie)">delete</mat-icon>
+    </ng-container>
+</div>
+<ng-template #loggedOut2>
+    <h2>Would you like to delete a movie? Please login to do so</h2>
+</ng-template>

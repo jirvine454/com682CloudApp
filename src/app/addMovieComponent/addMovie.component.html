@@ -1,0 +1,47 @@
+<div class="container"> 
+    <div class="row">
+        <div class="col-sm-12">
+            <ng-container *ngIf="authService.isAuthenticated$ | async; else loggedOut">
+                <h2>Please Enter the Movies Details</h2>
+                <form [formGroup]="addMovieForm" (ngSubmit)="onCreateMovie()">
+                    <div class="form-group">
+                        <label for="fileName">File Name</label>
+                        <input type="text" id="fileName" name="fileName" class="form-control" formControlName="fileName">
+                    </div>
+                    <div class="form-group">
+                        <label for="userID">User ID</label>
+                        <input type="text" id="userID" name="userID" class="form-control" formControlName="userID">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" class="form-control" formControlName="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="publisher">Publisher</label>
+                        <input type="text" id="publisher" name="publisher" class="form-control" formControlName="publisher">
+                    </div>
+                    <div class="form-group">
+                        <label for="producer">Producer</label>
+                        <input type="text" id="producer" name="producer" class="form-control" formControlName="producer">
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <input type="text" id="genre" name="genre" class="form-control" formControlName="genre">
+                    </div>
+                    <div class="form-group">
+                        <label for="ageRating">Age Rating</label>
+                        <input type="text" id="ageRating" name="ageRating" class="form-control" formControlName="ageRating">
+                    </div>
+                    <div class="form-group">
+                        <label for="File">File</label>
+                        <input type="file" (change)="onFileSelected($event)" id="File" name="File" class="form-control" formControlName="File">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </ng-container>
+            <ng-template #loggedOut>
+                <h2>Would you like to add a movie? Please login to do so</h2>
+            </ng-template>
+        </div>
+    </div>
+</div>

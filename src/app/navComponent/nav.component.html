@@ -1,0 +1,41 @@
+<div class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <img src="../assets/images/logo.jpg" alt="Movie Directory Logo" loading="lazy" />
+    <span class="navbar-brand">Cloud Movies</span>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/'>Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/dashboard'>Movie Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/addMovie'>Add Movie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/deleteMovie'>Delete Movie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/search'>Search</a>
+        </li>
+        <li class="nav-item">
+            <ng-container *ngIf="authService.isAuthenticated$ | async; else loggedOut2">
+                <a class="nav-link" routerLink='/myProfile'>My Profile</a>
+            </ng-container>
+        </li>
+    </ul>
+
+    <div class="form-inline ms-auto" style="margin-right: 10px;">
+        <ng-container *ngIf="authService.isAuthenticated$ | async; 
+        else loggedOut">
+            <button class="btn btn-outline-light" (click)="authService.logout()">Logout</button>
+        </ng-container>
+    
+        <ng-template #loggedOut>
+            <button class="btn btn-outline-light" (click)="authService.loginWithRedirect({ appState : { target : this.router.url } } )">
+                Login</button>
+        </ng-template>
+        <ng-template #loggedOut2>
+            <button mat-button [hidden]="true"></button>
+        </ng-template>
+    </div>
+</div>

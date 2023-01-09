@@ -1,0 +1,6 @@
+<div class="container" *ngFor="let movie of movie_list | async">
+    <video width="320" height="240" controls>
+        <source src="https://vidshareb00787624.blob.core.windows.net{{ movie.filePath }}">
+    </video>
+    <p>{{ movie.filePath }}</p>
+</div>
