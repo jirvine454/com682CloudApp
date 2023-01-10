@@ -31,9 +31,10 @@ export class addMovieComponent {
             userID: ['', Validators.required],
             title: ['', Validators.required],
             publisher: ['', Validators.required],
-            producer: ['', Validators.required],
+            director: ['', Validators.required],
             genre: ['', Validators.required],
             ageRating: ['', Validators.required],
+            overview: ['', Validators.required]
         });
     }
 
@@ -47,7 +48,11 @@ export class addMovieComponent {
 
         this.webService.addCloudMovie(this.addMovieForm.value, this.selectedFile).subscribe((response: any) => {
             this.addMovieForm.reset();
-            console.log("Hi!, test, test2");
+            this.openSnackBar("Review for " + this.addMovieForm.title + " has been successfully posted!");
         });
     }
+
+    openSnackBar(message: string, action?: string) {
+        this.snackBar.open(message, action, { duration: 5 * 1000 });
+      }
 }

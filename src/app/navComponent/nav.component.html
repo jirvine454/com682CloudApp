@@ -15,9 +15,6 @@
             <a class="nav-link" routerLink='/deleteMovie'>Delete Movie</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink='/search'>Search</a>
-        </li>
-        <li class="nav-item">
             <ng-container *ngIf="authService.isAuthenticated$ | async; else loggedOut2">
                 <a class="nav-link" routerLink='/myProfile'>My Profile</a>
             </ng-container>

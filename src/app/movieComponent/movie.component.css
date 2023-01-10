@@ -44,17 +44,8 @@
 }
 
 .mat-card-movie {
-    width: 400px;
+    width: 427px;
     height: 700px;
-    margin: 20px;
-    margin-top: 60px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid black;
-}
-
-.mat-card-review {
-    width: 500px;
     margin: 20px;
     margin-top: 60px;
     margin-left: auto;
@@ -105,4 +96,8 @@ h1 {
     margin-left: 300px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+video {
+    width: 400px;
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MoviesComponent } from './moviesComponent/movies.component';
+import { DeleteMovieComponent } from './deleteMovieComponent/deleteMovie.component';
 import { WebService } from './web.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -21,15 +21,14 @@ import { SearchComponent } from './searchComponent/search.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DashboardComponent } from './dashboardComponent/dashboard.component';
 import { addMovieComponent } from './addMovieComponent/addMovie.component';
-import { DeleteMovieComponent } from './deleteMovieComponent/deleteMovie.component';
 
 var routes: any = [ {
   path: '', 
   component: HomeComponent
   },
   {
-  path: 'movies', 
-  component: MoviesComponent
+  path: 'deleteMovie', 
+  component: DeleteMovieComponent
   },
   {
   path: 'movies/:id', 
@@ -44,10 +43,6 @@ var routes: any = [ {
   component: addMovieComponent
   },
   {
-  path: 'deleteMovie',
-  component: DeleteMovieComponent
-  },
-  {
   path: 'myProfile',
   component: ProfileComponent
   },
@@ -60,7 +55,7 @@ var routes: any = [ {
 @NgModule({
   declarations: [
     AppComponent,
-    MoviesComponent,
+    DeleteMovieComponent,
     HomeComponent,
     MovieComponent,
     NavComponent,

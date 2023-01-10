@@ -23,9 +23,10 @@ export class WebService {
         movieData.append("userID", movie.userID);
         movieData.append("title", movie.title);
         movieData.append("publisher", movie.publisher);
-        movieData.append("producer", movie.producer);
+        movieData.append("director", movie.director);
         movieData.append("genre", movie.genre);
         movieData.append("ageRating", movie.ageRating);
+        movieData.append("overview", movie.overview);
         movieData.append("file", file);
 
         return this.http.post('https://prod-46.northeurope.logic.azure.com:443/workflows/3e5ca4b29f094b28b8139657b91898b4/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=1pIwEEr7yKZ4X3T4DT2ikM-_6GDcU4yINyOh25kMOrs', movieData);

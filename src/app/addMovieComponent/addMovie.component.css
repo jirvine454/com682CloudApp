@@ -5,3 +5,7 @@
 .error {
     background-color: red;
 }
+
+button {
+    margin-top: 30px;
+}

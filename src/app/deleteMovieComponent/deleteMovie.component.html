@@ -1,6 +1,20 @@
 <div class="container" *ngFor="let movie of movie_list | async">
+    <h2>
+        <b>{{movie.title}}</b>
+    </h2>
+    <h3>
+        {{movie.genre}}
+    </h3>
     <video width="320" height="240" controls>
         <source src="https://vidshareb00787624.blob.core.windows.net{{ movie.filePath }}">
     </video>
-    <p>{{ movie.filePath }}</p>
+    <h3>
+        <b>Overview:</b> {{movie.overview}}
+    </h3>
+    <ng-container *ngIf="authService.isAuthenticated$ | async; else loggedOut">
+        <mat-icon class="red-icon" (click)="onDeleteMovie(movie)">delete</mat-icon>
+    </ng-container>
 </div>
+<ng-template #loggedOut>
+    <h2>Would you like to delete a movie? Please login to do so</h2>
+</ng-template>
