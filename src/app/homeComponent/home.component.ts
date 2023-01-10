@@ -3,7 +3,7 @@ import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
     selector: 'home',
-    templateUrl: './home.component.html',
+    templateUrl: './index.html',
     styleUrls: ['./home.component.css']
 })
 
