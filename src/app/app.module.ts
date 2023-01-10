@@ -23,7 +23,7 @@ import { DashboardComponent } from './dashboardComponent/dashboard.component';
 import { addMovieComponent } from './addMovieComponent/addMovie.component';
 
 var routes: any = [ {
-  path: 'home', 
+  path: '', 
   component: HomeComponent
   },
   {
