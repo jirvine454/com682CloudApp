@@ -48,7 +48,7 @@ export class addMovieComponent {
 
         this.webService.addCloudMovie(this.addMovieForm.value, this.selectedFile).subscribe((response: any) => {
             this.addMovieForm.reset();
-            console.log("Test");
+            console.log("Test1");
         });
     }
 
