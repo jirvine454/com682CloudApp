@@ -48,7 +48,6 @@ export class addMovieComponent {
 
         this.webService.addCloudMovie(this.addMovieForm.value, this.selectedFile).subscribe((response: any) => {
             this.addMovieForm.reset();
-            this.openSnackBar("Review for " + this.addMovieForm.title + " has been successfully posted!");
         });
     }
 
